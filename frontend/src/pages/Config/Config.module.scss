@@ -1,0 +1,63 @@
+.pageContainer {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.addAttu {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 0.5rem;
+    button,
+    input {
+        background-color: #30343a;
+        border: 1px solid white;
+        border-radius: 6px;
+        color: white;
+        height: 2rem;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.attuListPanel {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 2rem;
+}
+.attuListContainer {
+    border: 1px solid white;
+    height: 10rem;
+    overflow-y: auto;
+}
+
+ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.attuListItem {
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-align: left;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.attuListItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.selectedAttu {
+   background-color:#4d5157 !important;
+}

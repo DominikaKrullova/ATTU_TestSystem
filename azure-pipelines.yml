@@ -1,0 +1,52 @@
+pr:
+  branches:
+    include:
+      - main
+
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: BuildFirmware
+  condition: true
+  jobs:
+  - job: BuildFirmware
+    displayName: Build Firmware
+    steps:
+      - checkout: self
+
+      - script: |
+          wget 'ftp://10.10.0.106/toolchains/imx8-toolchain.sh' -q
+          chmod +x vf-toolchain.sh imx8-toolchain.sh
+          ./imx8-toolchain.sh -d /usr/local/imx8-toolchain -y
+          # echo y | ./Tools/Development/install_oatpp_deps.sh
+        displayName: Install prerequisites
+        condition: succeededOrFailed()
+
+
+  - script: dotnet restore
+    displayName: Restore
+  - script: dotnet build --no-restore -c Release
+    displayName: Build
+      - script: |
+          cmake --preset "Linux-Debug" -DBUILD_TESTING=yes -DCMAKE_EXPORT_COMPILE_COMMANDS=yes
+          cmake --build build/Linux-Debug --target install -- -j$(nproc)
+    displayName: Build testing
+    condition: succeededOrFailed()
+
+    - script: |
+      cmake --preset "Linux-Debug" -DBUILD_TESTING=yes -DCMAKE_EXPORT_COMPILE_COMMANDS=yes
+      cmake --build build/Linux-Debug --target install -- -j$(nproc)
+    displayName: Build testing
+    condition: succeededOrFailed()
+
+  - script: |
+          cd build/Linux-Debug
+          ctest --output-on-failure
+    displayName: Run unit tests
+    condition: succeededOrFailed()

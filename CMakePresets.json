@@ -1,0 +1,113 @@
+﻿{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "Common",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/deploy/${presetName}",
+      "cacheVariables": {
+        "CMAKE_IGNORE_PATH": "/mnt"
+      },
+      "hidden": true
+    },
+    {
+      "name": "IMX8",
+      "inherits": "Common",
+      "description": "Target Apalis-IMX8 using a toolchain.",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "/usr/local/imx8-toolchain/sysroots/x86_64-oesdk-linux/usr/share/cmake/armv8a-oe-linux-toolchain.cmake",
+        "CMAKE_SYSROOT": "/usr/local/imx8-toolchain/sysroots/armv8a-oe-linux"
+      },
+      "hidden": true
+    },
+    {
+      "name": "VF",
+      "inherits": "Common",
+      "description": "Target Colibri-VF61 using a toolchain.",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "/usr/local/vf-toolchain/sysroots/x86_64-oesdk-linux/usr/share/cmake/cortexa5t2hf-neon-oe-linux-gnueabi-toolchain.cmake",
+        "CMAKE_SYSROOT": "/usr/local/vf-toolchain/sysroots/cortexa5t2hf-neon-oe-linux-gnueabi"
+      },
+      "hidden": true
+    },
+    {
+      "name": "Host",
+      "inherits": "Common",
+      "description": "Target the build host (e.g. WSL or remote linux machine)",
+      "hidden": true
+    },
+    {
+      "name": "Windows",
+      "inherits": "Common",
+      "description": "Target Windows.",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      },
+      "hidden": true
+    },
+    {
+      "name": "IMX8-Debug",
+      "inherits": "IMX8",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "yes"
+        // "BUILD_TESTING": "yes"
+      }
+    },
+    {
+      "name": "IMX8-Release",
+      "inherits": "IMX8",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "VF-Debug",
+      "inherits": "VF",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "yes",
+        "BUILD_TESTING": "yes"
+      }
+    },
+    {
+      "name": "VF-Release",
+      "inherits": "VF",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "Linux-Debug",
+      "inherits": "Host",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "yes",
+        "BUILD_TESTING": "yes"
+      }
+    },
+    {
+      "name": "Linux-Release",
+      "inherits": "Host",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "Windows-Debug",
+      "inherits": "Windows",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Windows-Release",
+      "inherits": "Windows",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}

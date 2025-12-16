@@ -1,0 +1,43 @@
+.logsPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.logsContainer {
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    overflow-y: auto;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    background-color: #30343a;
+    border: 1px solid white;
+    border-radius: 6px;
+    color: white;
+    width: 5rem;
+    height: 2rem;
+}
+
+.logText {
+    color: #ffffff;
+}
+
+.passed {
+    color: rgb(76, 226, 76);
+}
+
+.failed {
+    color: rgb(231, 39, 39);
+}

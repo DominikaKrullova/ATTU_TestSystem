@@ -1,0 +1,23 @@
+# Ignore output dirs
+out
+build
+deploy
+bin
+obj
+Testing
+
+# Helper script temporary dirs
+Tools/Development/tmp*
+
+# Ignore CMake-generated files in the repo dir
+cmake_install.cmake
+Makefile
+CMakeFiles
+CMakeCache.txt
+
+# Ignore generated version files
+application_version.h
+
+# Ignore vs code folder
+.vscode
+.vs

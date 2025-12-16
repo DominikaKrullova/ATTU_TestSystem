@@ -1,0 +1,20 @@
+BasedOnStyle: Google
+AccessModifierOffset: -2
+AlignArrayOfStructures: Right
+AlignConsecutiveAssignments:
+  Enabled: true
+AlignConsecutiveDeclarations:
+  Enabled: true
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Allman
+BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: BeforeComma
+ColumnLimit: 120
+IndentWidth: 4
+NamespaceIndentation: All
+PackConstructorInitializers: Never
+QualifierAlignment: Left
+SpaceAfterTemplateKeyword: false

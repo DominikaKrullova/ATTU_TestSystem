@@ -1,0 +1,3 @@
+[submodule "EIVA_Embedded"]
+	path = EIVA_Embedded
+	url = ssh://devops.eiva.com:22/EIVA/Software/_git/Embedded

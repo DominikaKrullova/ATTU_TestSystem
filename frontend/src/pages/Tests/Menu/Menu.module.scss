@@ -1,0 +1,43 @@
+.menuPanel {
+    width: 30%;
+}
+
+.menuContainer {
+    margin-top: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.rowFull {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons,
+.rowTwo {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+}
+
+.select,
+.button {
+    background-color: #30343a;
+    border: 1px solid white;
+    border-radius: 6px;
+    color: white;
+    width: 40%;
+    height: 2rem;
+}
+
+.testSelect {
+    width: 92%;
+}

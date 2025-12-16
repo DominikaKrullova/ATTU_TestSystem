@@ -1,0 +1,10 @@
+.portsGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 3rem);
+}
+
+.portButton {
+    background-color: #4d5157;
+    color: white;
+    height: 2rem;
+}
