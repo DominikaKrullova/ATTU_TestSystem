@@ -8,8 +8,7 @@ namespace DTO
 {
 
 #include OATPP_CODEGEN_BEGIN(DTO)
-    // clang-format off
-    // NOTE(dfo): No trailing ',' on the last line
+
     ENUM(PacketType, v_uint32,
         VALUE(UNKNOWN, 0),
         VALUE(Sync, 1),

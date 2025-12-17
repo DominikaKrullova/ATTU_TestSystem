@@ -42,14 +42,3 @@ ATTU_Response ATTU_MK2_Handler::TagTestData(TestData data_to_tag)
 
     return data_receiver->ReceiveData(data_to_tag.test_data.size());
 }
-
-// void ATTU_MK2_Handler::StartHandler()
-// {
-//     data_receiver->Start_Receiving();
-//     data_sender->Start_Sending();
-// }
-// void ATTU_MK2_Handler::StopHandler()
-// {
-//     data_sender->Stop_Sending();
-//     data_receiver->Stop_Receiving();
-// }

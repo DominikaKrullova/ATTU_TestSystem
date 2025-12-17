@@ -2,8 +2,7 @@
 
 #include <Log.h>
 
-DataSender::DataSender(std::unique_ptr<Connection> device_connection)
-// : TaskComponent("DataSender")
+DataSender::DataSender(std::unique_ptr<Connection> device_connection))
 {
     connection = std::move(device_connection);
 
@@ -32,21 +31,3 @@ void DataSender::SendData(TestData data)
         std::cout << i.data() << " ";
     }
 }
-
-// void DataSender::Start_Sending()
-// {
-//     StartTask();
-// }
-// void DataSender::Stop_Sending()
-// {
-//     StopTaskAndJoin();
-// }
-
-// void DataSender::OnTaskLoop()
-// {
-//     while (IsRunning())
-//     {
-//         SendData();
-//         std::this_thread::sleep_for(std::chrono::seconds(1));
-//     }
-// }

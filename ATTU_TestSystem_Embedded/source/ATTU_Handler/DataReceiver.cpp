@@ -11,8 +11,6 @@
 #include <thread>
 
 DataReceiver::DataReceiver(const IP_Configuration& config_ptr)
-    // : TaskComponent("DataReceiver")
-    // ,
     : buffer(buffer_size)
 {
     config     = config_ptr;
@@ -21,15 +19,7 @@ DataReceiver::DataReceiver(const IP_Configuration& config_ptr)
     udp_server->Connect();
 }
 
-// void DataReceiver::Start_Receiving()
-// {
-//     StartTask();
-// }
 
-// void DataReceiver::Stop_Receiving()
-// {
-//     StopTaskAndJoin();
-// }
 
 ATTU_Response DataReceiver::ReceiveData(size_t expected_responses)
 {
@@ -66,22 +56,3 @@ ATTU_Response DataReceiver::ReceiveData(size_t expected_responses)
 
     return response;
 }
-
-// void DataReceiver::OnTaskStartup()
-// {
-// }
-
-// void DataReceiver::OnTaskLoop()
-// {
-//     try
-//     {
-//         while (IsRunning())
-//         {
-//             ReceiveData();
-//         }
-//     }
-//     catch (const std::exception& e)
-//     {
-//         std::cerr << "[UDP ERROR] " << e.what() << std::endl;
-//     }
-// }

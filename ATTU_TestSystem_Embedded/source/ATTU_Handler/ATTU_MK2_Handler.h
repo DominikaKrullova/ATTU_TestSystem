@@ -14,8 +14,6 @@ class ATTU_MK2_Handler : public ATTU_Handler
     ATTU_MK2_Handler();
     virtual ~ATTU_MK2_Handler() = default;
 
-    // void StartHandler();
-    // void StopHandler();
 
     ATTU_Response TagTestData(TestData data_to_tag) override;
 

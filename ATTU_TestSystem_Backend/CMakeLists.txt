@@ -8,7 +8,6 @@ find_package(oatpp-websocket REQUIRED)
 set(SOURCE_FILES
     source/main.cpp
     source/Client.cpp
-    source/service/TestService.cpp
     source/Broadcast.cpp
 )
 
